@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    <meta
+      name="description"
+      content="Conversor de unidades físicas con precisión decimal para longitud, área, volumen, masa y velocidad. Taller #1 Física ADSO."
+    />
+    <meta
+      name="theme-color"
+      content="#060a13"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta
+      name="theme-color"
+      content="#f4f7fb"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta property="og:title" content="Conversor de Unidades Físicas" />
+    <meta
+      property="og:description"
+      content="Conversiones exactas de longitud, área, volumen, masa y velocidad con una interfaz moderna."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Conversor de Unidades Físicas — Taller #1 Física ADSO</title>
+    <script>
+      ;(() => {
+        try {
+          const stored = localStorage.getItem('conversor-theme')
+          const isLight = stored === 'light'
+          document.documentElement.classList.toggle('dark', !isLight)
+          document.documentElement.style.colorScheme = isLight
+            ? 'light'
+            : 'dark'
+        } catch {
+          document.documentElement.classList.add('dark')
+        }
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
